@@ -67,7 +67,12 @@ class _HomeScreenState extends State<HomeScreen>
       colorText: AppColors.surface,
       margin: const EdgeInsets.all(16),
       borderRadius: 12,
-      duration: const Duration(seconds: 3),
+      duration: null,
+      isDismissible: true,
+      mainButton: TextButton(
+        onPressed: () => Get.back(),
+        child: const Icon(PhosphorIconsRegular.x, color: AppColors.surface),
+      ),
     );
   }
 
