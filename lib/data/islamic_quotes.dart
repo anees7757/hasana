@@ -107,4 +107,20 @@ class IslamicQuotes {
     // Use modulo to cycle through quotes
     return quotes[dayNumber % quotes.length];
   }
+
+  static String getStreakMessage(int streak) {
+    if (streak == 0) {
+      return "Every journey begins with a single sincere step.";
+    } else if (streak < 3) {
+      return "This is not just a streak, it's the start of something beautiful.";
+    } else if (streak < 7) {
+      return "You're building consistency — small deeds, big rewards.";
+    } else if (streak < 14) {
+      return "This is not just a streak, it's a habit forming for the sake of Allah.";
+    } else if (streak < 30) {
+      return "Your consistency is كتابة in your book of deeds. Keep going.";
+    } else {
+      return "This is no longer a streak — this is who you are becoming.";
+    }
+  }
 }

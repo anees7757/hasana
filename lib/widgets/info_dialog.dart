@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_text_styles.dart';
 
 class InfoDialog extends StatelessWidget {
   const InfoDialog({super.key});
@@ -7,7 +9,7 @@ class InfoDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: const Color(0xFFFFF9E6),
+      backgroundColor: AppColors.background,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ),
@@ -16,13 +18,9 @@ class InfoDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
+            Text(
               'What counts as good?',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF2C3E50),
-              ),
+              style: AppTextStyles.dialogTitle,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
@@ -35,11 +33,10 @@ class InfoDialog extends StatelessWidget {
             _buildInfoItem('Spoke kindly to others'),
             _buildInfoItem('Prayed on time'),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               'Any act of kindness, self-control, or worship counts. The intention matters most.',
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF7F8C8D),
+              style: AppTextStyles.dialogBody.copyWith(
+                color: AppColors.textSecondary,
                 fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
@@ -50,19 +47,16 @@ class InfoDialog extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () => Get.back(),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF5F9EA0),
-                  foregroundColor: Colors.white,
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: AppColors.surface,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   'Got it',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: AppTextStyles.buttonText.copyWith(fontSize: 16),
                 ),
               ),
             ),
@@ -82,7 +76,7 @@ class InfoDialog extends StatelessWidget {
             '▪',
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xFF5F9EA0),
+              color: AppColors.primary,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -90,11 +84,7 @@ class InfoDialog extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Color(0xFF34495E),
-                height: 1.4,
-              ),
+              style: AppTextStyles.dialogBody,
             ),
           ),
         ],
