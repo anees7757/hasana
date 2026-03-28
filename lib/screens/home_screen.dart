@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen>
   void _onTapUp(bool canPress, HasanaController controller) {
     if (!canPress) return;
     _animController.reverse();
-    HapticFeedback.mediumImpact();
+    HapticFeedback.selectionClick();
     controller.recordGoodDeed();
     Get.snackbar(
       '',

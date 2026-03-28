@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
-  static TextStyle get logo => GoogleFonts.vibes(
+  static TextStyle get logo => TextStyle(
+    fontFamily: 'Vibes',
     fontSize: 32,
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
@@ -36,7 +36,8 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle get kalima => GoogleFonts.notoNastaliqUrdu(fontSize: 18);
+  static TextStyle get kalima =>
+      TextStyle(fontFamily: 'NotoNaskhArabic', fontSize: 20);
 
   static TextStyle get quote => const TextStyle(
     fontSize: 14,

@@ -10,9 +10,7 @@ class InfoDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: AppColors.background,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       child: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Column(
@@ -81,12 +79,7 @@ class InfoDialog extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              text,
-              style: AppTextStyles.dialogBody,
-            ),
-          ),
+          Expanded(child: Text(text, style: AppTextStyles.dialogBody)),
         ],
       ),
     );
