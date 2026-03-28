@@ -36,13 +36,15 @@ A beautiful Islamic app to track your daily good deeds and build a streak of pos
 
 ```
 lib/
-├── main.dart                          # App entry point
+├── main.dart
 ├── controllers/
-│   └── hasana_controller.dart         # State management
+│   └── hasana_controller.dart
 ├── screens/
-│   └── home_screen.dart               # Main screen
+│   └── home_screen.dart
 └── widgets/
-    └── info_dialog.dart               # Info modal dialog
+│   └── info_dialog.dart
+└── data/
+    └── islamic_quotes.dart
 ```
 
 ## Setup Instructions
