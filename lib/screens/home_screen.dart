@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen>
               Obx(() {
                 final canPress = controller.canPressToday.value;
                 final screenWidth = MediaQuery.of(context).size.width;
-                final buttonSize = (screenWidth * 0.80).clamp(180.0, 280.0);
+                final buttonSize = (screenWidth * 0.60).clamp(160.0, 260.0);
 
                 return GestureDetector(
                   onTapDown: (_) => _onTapDown(canPress),
@@ -282,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen>
                 );
               }),
 
-              SizedBox(height: MediaQuery.paddingOf(context).bottom + 30),
+              SizedBox(height: MediaQuery.paddingOf(context).bottom),
             ],
           ),
         ),
