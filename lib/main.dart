@@ -37,7 +37,12 @@ class HasanaApp extends StatelessWidget {
         fontFamily: 'Georgia',
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: MediaQuery(
+        data: MediaQuery.of(
+          context,
+        ).copyWith(textScaler: const TextScaler.linear(1.0)),
+        child: const HomeScreen(),
+      ),
     );
   }
 }

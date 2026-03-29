@@ -107,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
 
@@ -246,9 +247,12 @@ class _HomeScreenState extends State<HomeScreen>
                       ],
                     ),
 
+                    const SizedBox(height: 12),
+
                     if (streak > 0) ...[
-                      const SizedBox(height: 12),
                       _buildMilestoneBar(streak),
+                    ] else ...[
+                      SizedBox(height: 8),
                     ],
                   ],
                 );
