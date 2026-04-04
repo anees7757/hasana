@@ -1,7 +1,9 @@
-<p align="center">
-  <img src="assets/images/hasana_logo.png" width="150" alt="Hasana Logo">
-  <h1 align="center">Hasana (حسنة)</h1>
-  <p align="center">A beautiful Islamic app to track your daily good deeds and build a streak of positivity.</p>
+<p align="left">
+  <img src="assets/images/hasana_logo.png" width="80" alt="Hasana Logo" style="border-radius: 30%;">
+  <br>
+  <font size="6"><b>Hasana (حسنة)</b></font>
+  <br>
+  A beautiful Islamic app to track your daily good deeds and build a streak of positivity.
 </p>
 
 ## Features
