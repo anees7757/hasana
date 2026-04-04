@@ -108,7 +108,21 @@ class IslamicQuotes {
     return quotes[dayNumber % quotes.length];
   }
 
-  static String getStreakMessage(int streak) {
+  static const List<String> comebackQuotes = [
+    'Don’t let a break become a stop. The door of good deeds is always open.',
+    'Allah loves those who persistently return to Him. Start again with sincerity.',
+    'A missed day is just a reason to make today even better. Keep going!',
+    'The best of deeds are those done consistently, even if they are small.',
+    'Every new day is a fresh chance to earn Allah\'s pleasure.',
+    'Your past streak was beautiful, and your next one will be even better.',
+  ];
+
+  static String getStreakMessage(int streak, {bool isBroken = false}) {
+    if (isBroken && streak == 0) {
+      // Use a comeback quote if the streak was broken
+      return comebackQuotes[DateTime.now().day % comebackQuotes.length];
+    }
+
     if (streak == 0) {
       return "Every journey begins with a single sincere step.";
     } else if (streak < 3) {

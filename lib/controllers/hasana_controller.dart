@@ -12,6 +12,7 @@ class HasanaController extends GetxController with WidgetsBindingObserver {
   RxInt totalDays = 0.obs;
   RxString lastDeedDate = ''.obs;
   RxBool canPressToday = true.obs;
+  RxBool isStreakBroken = false.obs;
 
   // Storage keys
   static const String keyStreak = 'current_streak';
@@ -60,7 +61,10 @@ class HasanaController extends GetxController with WidgetsBindingObserver {
       // Streak broken (difference > 1 or no deed yet)
       if (difference != null && difference > 1) {
         currentStreak.value = 0;
+        isStreakBroken.value = true;
         storage.write(keyStreak, 0);
+      } else {
+        isStreakBroken.value = false;
       }
       canPressToday.value = true;
     }
@@ -88,10 +92,11 @@ class HasanaController extends GetxController with WidgetsBindingObserver {
       bestStreak.value = currentStreak.value;
       storage.write(keyBestStreak, bestStreak.value);
     }
-    
+
     totalDays.value++;
     lastDeedDate.value = todayString;
     canPressToday.value = false;
+    isStreakBroken.value = false;
 
     // Save to storage
     storage.write(keyStreak, currentStreak.value);

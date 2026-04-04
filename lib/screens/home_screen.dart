@@ -263,18 +263,35 @@ class _HomeScreenState extends State<HomeScreen>
               // Bottom quote
               Obx(() {
                 final streak = controller.currentStreak.value;
-                return Container(
+                final isBroken = controller.isStreakBroken.value;
+                final showBrokenUI = isBroken && streak == 0;
+
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 14,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.surface.withValues(alpha: 0.7),
+                    color: showBrokenUI
+                        ? AppColors.accent.withValues(alpha: 0.12)
+                        : AppColors.surface.withValues(alpha: 0.7),
                     borderRadius: BorderRadius.circular(16),
+                    border: showBrokenUI
+                        ? Border.all(
+                            color: AppColors.accent.withValues(alpha: 0.3),
+                            width: 1,
+                          )
+                        : null,
                   ),
                   child: Text(
-                    IslamicQuotes.getStreakMessage(streak),
-                    style: AppTextStyles.quote,
+                    IslamicQuotes.getStreakMessage(streak, isBroken: isBroken),
+                    style: AppTextStyles.quote.copyWith(
+                      color: showBrokenUI
+                          ? AppColors.accent
+                          : AppColors.textSecondary,
+                      fontWeight: showBrokenUI ? FontWeight.w500 : null,
+                    ),
                     textAlign: TextAlign.center,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
