@@ -18,6 +18,11 @@ void main() async {
     ),
   );
 
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   Get.put(HasanaController());
 
   runApp(const HasanaApp());

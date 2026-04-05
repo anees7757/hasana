@@ -135,9 +135,11 @@ class _HomeScreenState extends State<HomeScreen>
                             ? 'ما شاء الله'
                             : 'بارك الله فيك',
                         style: AppTextStyles.kalima.copyWith(
-                          color: controller.hasStreakBrokenSinceLastVisit()
-                              ? AppColors.accent
-                              : AppColors.textHint,
+                          color:
+                          // controller.hasStreakBrokenSinceLastVisit()
+                          //     ? AppColors.accent
+                          //     :
+                          AppColors.textHint,
                         ),
                         textAlign: TextAlign.center,
                       );
@@ -189,8 +191,8 @@ class _HomeScreenState extends State<HomeScreen>
                             children: [
                               Icon(
                                 canPress
-                                    ? PhosphorIconsFill.sparkle
-                                    : PhosphorIconsRegular.sparkle,
+                                    ? PhosphorIconsRegular.sparkle
+                                    : PhosphorIconsFill.sparkle,
                                 size: 48,
                                 color: canPress
                                     ? AppColors.primary
