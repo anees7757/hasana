@@ -2,7 +2,7 @@ name: hasana
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 1.0.8+8
+version: 1.1.0+10
 
 environment:
   sdk: ^3.9.2
@@ -16,6 +16,9 @@ dependencies:
   intl: ^0.18.1
   firebase_core:
   phosphor_flutter: ^2.1.0
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+  android_alarm_manager_plus: ^4.0.6
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
+import '../services/notification_service.dart';
 
 class HasanaController extends GetxController with WidgetsBindingObserver {
   final storage = GetStorage();
@@ -26,6 +27,10 @@ class HasanaController extends GetxController with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     loadData();
     checkStreakStatus();
+    // Schedule daily reminder notifications
+    NotificationService.instance.init().then((_) {
+      NotificationService.instance.scheduleDailySlots();
+    });
   }
 
   @override
@@ -102,6 +107,9 @@ class HasanaController extends GetxController with WidgetsBindingObserver {
     storage.write(keyStreak, currentStreak.value);
     storage.write(keyTotalDays, totalDays.value);
     storage.write(keyLastDate, todayString);
+
+    // Cancel any remaining reminders for today — deed is done!
+    NotificationService.instance.cancelAll();
   }
 
   String getTodayDateString() {
